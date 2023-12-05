@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block metatags %}
+    {% endblock metatags %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cinéma Eden</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/owl.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body class="register-page">
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img src="static/images/logo-eden.png" alt="" style="width: 110px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="/" class="active">Accueil</a></li>
+                      <li><a href="/search">Recherche</a></li>
+                      <li><a href="/signUp">S'inscrire</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner-register">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 align-self-center">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container register"> <!-- ***** col-lg-10 offset-lg-2 ***** -->
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="main">  	
+                <input type="checkbox" id="chk" aria-hidden="true">
+        
+                    <div class="signup">
+                        <form>
+                            <label for="chk" aria-hidden="true">S'inscrire</label>
+                            <input type="text" name="txt" placeholder="Nom d'utilisateur" required="">
+                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="password" name="pswd" placeholder="Mot de passe" required="">
+                            <button>S'inscrire</button>
+                        </form>
+                    </div>
+        
+                    <div class="login">
+                        <form>
+                            <label for="chk" aria-hidden="true">Se Connecter</label>
+                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="password" name="pswd" placeholder="Password" required="">
+                            <button class="login-btn">Se connecter</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Fait avec <i class="fa-solid fa-heart" style="color: #e00022;"></i> par la <a href="/credits"> Dream Team</a> Marion, Iiulia et Léa.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--<<script src="static/js/isotope.min.js"></script>-->
+  <!--<script src="static/js/owl-carousel.js"></script>-->
+  <!--<script src="static//js/counter.js"></script>-->
+  <script src="static/js/custom.js"></script>
+
+  </body>
+</html>

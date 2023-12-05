@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block metatags %}
+    {% endblock metatags %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cinéma Eden</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img src="/static/images/logo-eden.png" alt="" style="width: 110px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="/" class="active">Accueil</a></li>
+                      <li><a href="/search">Recherche</a></li>
+                      <li><a href="/signUp">S'inscrire</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <div class="movie">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 movie-thumb">
+            <div class="left-image">
+                <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{ movies[1] }}" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 caption header-text movie-text">
+          <h3>{{ movies[0] }}</h3>
+            <p>{{ movies[4] }}</p>
+            <ul>
+                <li><span>Note :</span> <span class="note">{{ movies[2] }}</span></li>
+                <li><span>Année de sortie :</span> {{ movies[3] }}</li>
+                <li><span>Réalisateur(s) :</span>{{ director[0] }} / {{ director[1] }}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="nouveautes">
+<div class="container"> <!-- ***** col-lg-10 offset-lg-2 ***** -->
+  <div class="row">
+    <h6 class="title-actor">Les acteurs principaux</h6>
+    <div class="col-lg-2 col-md-6"></div>
+    <div class="col-lg-2 col-md-6"></div>
+    <div class="col-lg-2 col-md-6"></div>
+    {% for actor in actors %}
+      <div class="col-lg-2 col-md-6">
+        <div class="item">
+          <div class="thumb">
+          <img src="https://image.tmdb.org/t/p/original/{{ actor[1]}}" alt="">
+          </div>
+          <div class="down-content">
+            <h4>{{ actor[0] }}</h4>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+<!--     <div class="col-lg-2 col-md-6">
+      <div class="item">
+        <div class="thumb">
+          <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2" alt="">
+        </div>
+        <div class="down-content">
+          <h4>Nathalie Portman</h4>
+        </div>
+      </div>
+    </div> -->
+<!--     <div class="col-lg-2 col-md-6">
+      <div class="item">
+        <div class="thumb">
+          <img src="/static/images/nathalie-portman.jpg" alt="">
+        </div>
+        <div class="down-content">
+          <h4>Nathalie Portman</h4>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+</div>
+  <div class="nouveautes reco">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="section-heading">
+        <h6>Films similaires</h6>
+        <h4>Vous aimerez aussi...</h4>
+      </div>
+    </div>
+    <div class="rang1 container"> <!-- rang1 -->
+        <div class="row">
+        {% for value in value_ml %}
+        <div class="col-lg-2 col-sm-6 col-xs-12">
+          <div class="item">
+            <div class="thumb">
+              <a href="{{ url_for('main.movie', movie_id=value[3]) }}"><img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{ value[2] }}" alt=""></a>
+            </div>
+            <div class="down-content">
+              <h4>{{ value[0] }}</h4>
+                <div class="rating">
+                    <a href="#">
+                        <span class="rate">{{ value[1] }}</span>
+                        <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+        <!-- <div class="col-lg-2 col-sm-6 col-xs-12">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/static/images/dream-scenario.jpeg" alt=""></a>
+            </div>
+            <div class="down-content">
+              <h4>Dream Scenario</h4>
+                <div class="rating">
+                    <a href="#">
+                        <span class="rate">4.2</span>
+                        <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-2 col-sm-6 col-xs-12">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/static/images/dream-scenario.jpeg" alt=""></a>
+            </div>
+            <div class="down-content">
+              <h4>Dream Scenario</h4>
+                <div class="rating">
+                    <a href="#">
+                        <span class="rate">4.2</span>
+                        <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div> -->
+         <!--  <div class="col-lg-2 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="/static/images/dream-scenario.jpeg" alt=""></a>
+                </div>
+                <div class="down-content">
+                  <h4>Dream Scenario</h4>
+                    <div class="rating">
+                        <a href="#">
+                            <span class="rate">4.2</span>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div> -->
+        </div> <!-- fin row 1 -->
+    </div> <!-- fin rang 1 -->
+  </div>
+</div>
+</div>
+<footer>
+<div class="container">
+  <div class="col-lg-12">
+    <p>Fait avec <i class="fa-solid fa-heart" style="color: #e00022;"></i> par la <a href="/credits"> Dream Team</a> Marion, Iiulia et Léa.</p>
+  </div>
+</div>
+</footer>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--<<script src="static/js/isotope.min.js"></script>-->
+  <!--<script src="static/js/owl-carousel.js"></script>-->
+  <!--<script src="static//js/counter.js"></script>-->
+  <script src="/static/js/custom.js"></script>
+
+  </body>
+</html>
